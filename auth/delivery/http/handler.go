@@ -108,7 +108,7 @@ func (h *HandlerAuth) SignIn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	jwtToken, err := h.useCase.SignIn(userFromRequest.Name, userFromRequest.Password)
+	jwtToken, err := h.useCase.SignIn(userFromRequest.Mail, userFromRequest.Password)
 	if err == auth.ErrUserNotFound {
 		log.Error("SignIn : setCookieWithJwtToken error", err)
 		sendResponse(w, response.ErrorResponse("User not found"))
