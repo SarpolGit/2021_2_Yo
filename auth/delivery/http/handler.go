@@ -98,7 +98,7 @@ func (h *HandlerAuth) SignIn(w http.ResponseWriter, r *http.Request) {
 	log.Info("SignIn : started")
 
 	userFromRequest, err := getUserFromJSON(r)
-
+	
 	log.Info("SignIn : userFromRequest = ", userFromRequest)
 
 	if err != nil {

@@ -47,7 +47,7 @@ func main() {
 	handler := deliveryAuth.NewHandlerAuth(useCase)
 
 	r.HandleFunc("/signup", handler.SignUp).Methods("POST")
-	r.HandleFunc("/signin", handler.SignIn).Methods("POST")
+	r.HandleFunc("/login", handler.SignIn).Methods("POST")
 	r.HandleFunc("/user", handler.User).Methods("GET")
 	r.Methods("OPTIONS").HandlerFunc(Preflight)
 
